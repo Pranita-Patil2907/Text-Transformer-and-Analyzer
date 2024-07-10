@@ -4,12 +4,12 @@ import About from './components/About.js';
 import Navbar from './components/Navbar.js';
 import TextForm from './components/Textform.js';
 import react, {useState} from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -50,25 +50,25 @@ function App() {
   
   return (
     <>
-    {/* <Router>
+    <Router>
   <Navbar title="TextUtils" about="About Us" mode = {mode} toggleMode = {toggleMode}/>
   <Alert alert={alert}/>
   <div className="container my-5">
   <Routes>
-          <Route path="/about" element =  {<About />}>
+          <Route path="/about" element =  {<About />}  mode = {mode} >
            </Route>
          
           <Route path="/" element ={<TextForm heading = "Enter your text to analyse" mode = {mode} showAlert={showAlert}/>}>
           </Route>
   </Routes>
   </div>
-  </Router> */}
+  </Router>
 
-      <Navbar title="TextUtils" about="About Us" mode = {mode} toggleMode = {toggleMode}/>
+      {/* <Navbar title="TextUtils" about="About Us" mode = {mode} toggleMode = {toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
     <TextForm heading = "Enter your text to analyse" mode = {mode} showAlert={showAlert}/>
-    </div>
+    </div> */}
 
    </>
   );

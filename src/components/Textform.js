@@ -48,17 +48,17 @@ export default function TextForm(props) {
         <textarea className="form-control" style={{color: props.mode =="light"? "black": "white", backgroundColor: props.mode =="light"? "white": "#343a40" }} value = {text} id="myText" onChange={handleChange} rows="9"
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}> Convert to UPPERCASE</button>
-      <button className="btn btn-primary mx-2" onClick={handleLoClick}> Convert to lowercase</button>
-      <button className="btn btn-primary mx-2" onClick={copyText}> Copy Text</button>
-      <button className="btn btn-primary mx-2" onClick={clearText}> Clear Text</button>
+      <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}> Convert to UPPERCASE</button>
+      <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}> Convert to lowercase</button>
+      <button className="btn btn-primary mx-2 my-1" onClick={copyText}> Copy Text</button>
+      <button className="btn btn-primary mx-2 my-1" onClick={clearText}> Clear Text</button>
 
 
     </div>
 
     <div className="container my-4" style={{color: props.mode =="light"? "black": "white"}}>
       <h2>Your Text Summary</h2>
-      <p>{text.split(" ").length} words and {text.length} charactes.</p>
+      <p>{text.split(" ").filter((element)=>{return element.length!=0}).length} words and {text.length} charactes.</p>
       <p>{0.008 * text.split(" ").length } minutes to read.</p>
       <h3>Perview</h3>
       <p>{text.length>0?text:"Enter your text in above textbox to perview here." }</p>
